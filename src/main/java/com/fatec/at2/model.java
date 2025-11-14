@@ -12,12 +12,12 @@ public class model {
     int i;
     double media;
     double[] notas = new double[3];
-    String n;
+    String nome;
     public void cadastro(){
         //captura do nome escrito 
-        String nome = JOptionPane.showInputDialog(null,
+        String n = JOptionPane.showInputDialog(null,
                 "Digite o seu nome completo");
-        n = nome;
+        nome = n;
     }
     public void notas(){
         for(i=0;i<3;i++){
@@ -25,12 +25,10 @@ public class model {
         String nota = JOptionPane.showInputDialog(null,
                 "Digite a sua nota "+(this.i+1));
         notas[i] = Double.parseDouble(nota);
-        JOptionPane.showMessageDialog(null, 
-                notas[0]+" "+notas[1]+" "+notas[2]);
         }
     }
     public void calculo(){
-        //usar parse pra ir de string pra double
+        //usar outra variável pra calcular
         media = (notas[0]+notas[1]+notas[2])/3;
         System.out.println(media);
     }
@@ -38,13 +36,13 @@ public class model {
         //mostrar resultado
         if(media<6){
         JOptionPane.showMessageDialog(null, 
-                "Infelizmente "+n+" você foi reprovado"+media);
+                "Infelizmente "+nome+" você foi reprovado");
         }else if(media<=9){
             JOptionPane.showMessageDialog(null, 
-                "Parabens "+n+" você foi aprovado!");
+                "Parabens "+nome+" você foi aprovado!");
         }else if(media>9){
             JOptionPane.showMessageDialog(null, 
-                "Parabens "+n+" você teve um ótimo aproveitamento!");
+                "Parabens "+nome+" você teve um ótimo aproveitamento!");
         }
     }
 }
